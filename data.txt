@@ -1,0 +1,6 @@
+International Business Management       l2        Consulatation fee // error
+Imperial Chemical                       234       Pest control chemicals
+National Home Appliances                34S6      Coffee machines // error
+MicroHeart Software Consultancy         45678     Security audit  
+University of Silver Quartet            5678      Facility management
+Telstar Satellite Communication         67O       Disconnection fee // error
