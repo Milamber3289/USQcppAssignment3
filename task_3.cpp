@@ -9,22 +9,24 @@
 using namespace std;
 
 string openFile(ifstream& in, string str);
-/**
-
-@param ifstream 
-@param str 
+/**Loads the file named in 'str' to the input file stream 'in'. 
+If the file cannot be opened, the user is prompted to input a new file name.
+Returns the name of the file that was opened. This may not be the same file originally named in the function call.
+@param in input file stream which will open the file.
+@param str the name of the file to be opened in string form. 
 */
 
 
 string openFile(ofstream& out, string str);
-/**
-
-@param ifstream 
-@param str 
+/**Loads the file named in 'str' to the output file stream 'out'. 
+If the file cannot be opened, the user is prompted to input a new file name.
+Returns the name of the file that was opened. This may not be the same file originally named in the function call.
+@param out output file stream which will open the file. 
+@param str the name of the file to be opened in string form. 
 */
 
 double string_to_double(string number_string);
-/**Takes a string as an argument and returns it as a decimal.
+/**Takes a string as an argument and returns a double.
 number_string must consist of numbers only to avoid logic errors.
 @param number_string A string of digits representing the number value. 
 */
