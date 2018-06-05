@@ -168,7 +168,7 @@ string openFile(ifstream& in, string str)
 	{
 		if(in.fail())
 			{
-				error_msg="cannot open data file "+str+". Please input the correct data file name:";
+				error_msg="Cannot open data file "+str+". Please input the correct data file name:";
 				throw Readfile_error(error_msg);
 			}
 	}
@@ -189,7 +189,7 @@ string openFile(ofstream& out, string str)
 	{
 		if(out.fail())
 			{
-				error_msg="cannot open data file "+str+". Please input the correct data file name:";
+				error_msg="Cannot open data file "+str+". Please input the correct data file name:";
 				throw Writefile_error(error_msg);
 			}
 	}

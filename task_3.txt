@@ -2,8 +2,49 @@
 Compilation Message:
 ***************************************************************
 
+C:\MinGW-4.7.1\csc2402\Ass3>g++ -Wall task_3.cpp exception.cpp
 
 ***************************************************************
 Sample Runs:
 ***************************************************************
 
+C:\MinGW-4.7.1\csc2402\Ass3>a
+Usage: app_name data_file_name output_file_name.
+C:\MinGW-4.7.1\csc2402\Ass3>a dat.txt out.txt
+Cannot open data file dat.txt. Please input the correct data file name:daat.txt
+Cannot open data file daat.txt. Please input the correct data file name:dtta.txt
+Cannot open data file dtta.txt. Please input the correct data file name:data.txt
+Cannot open dat.txt, data.txt opened instead.
+Do you want to proceed? ('y' to proceed) n
+Cannot proceed further. Program is closing down.
+C:\MinGW-4.7.1\csc2402\Ass3>a dat.txt out.txt
+Cannot open data file dat.txt. Please input the correct data file name:data.txt
+Cannot open dat.txt, data.txt opened instead.
+Do you want to proceed? ('y' to proceed) y
+Number contains non digits: l2
+Current line will be skipped!
+
+Number contains non digits: 34S6
+Current line will be skipped!
+
+Number contains non digits: 67O
+Current line will be skipped!
+
+Date: 06/05/18 19:29:07
+Total payment: $51590
+Average payment: $17196.67
+
+
+C:\MinGW-4.7.1\csc2402\Ass3>a data_c.txt out.txt
+Cannot open data file out.txt. Please input the correct data file name:out2.txt
+Cannot open out.txt, out2.txt opened instead.
+Do you want to proceed? ('y' to proceed) y
+Date: 06/05/18 19:31:04
+Total payment: $51590
+Average payment: $17196.67
+
+
+C:\MinGW-4.7.1\csc2402\Ass3>a data_c.txt out.txt
+Date: 06/05/18 19:31:42
+Total payment: $51590
+Average payment: $17196.67
