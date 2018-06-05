@@ -3,6 +3,7 @@
 #include<fstream>
 #include<iostream>
 #include<cctype>
+#include<iomanip>
 #include <ctime>
 #include "exception.h"
 using namespace std;
@@ -23,10 +24,9 @@ string openFile(ofstream& out, string str);
 */
 
 double string_to_double(string number_string);
-/**
-
-@param ifstream 
-@param str 
+/**Takes a string as an argument and returns it as a decimal.
+number_string must consist of numbers only to avoid logic errors.
+@param number_string A string of digits representing the number value. 
 */
 
 int main(int argc, char* argv[])
@@ -46,13 +46,14 @@ int main(int argc, char* argv[])
 	}
 	string arg_input_file_name=argv[1];
 	string arg_output_file_name=argv[2];
+	
 	//open input and output streams
 	ifstream in;
 	ofstream out;
 	string opened_input_file = openFile(in, arg_input_file_name);
 	string opened_output_file = openFile(out, arg_output_file_name);
 
-	//validate opened input file choice
+	//validate opened input file
 	string proceed_command = " ";
 	if(opened_input_file!=arg_input_file_name)
 	{
@@ -91,6 +92,8 @@ int main(int argc, char* argv[])
 	
 	string digit_error_msg="";
 	
+	//Loop through each line of the input file and read payments. 
+	//Check if payment is valid, and either display an error message or increment total & count
 	while(!in.eof())
 	{
 		getline(in,this_line);
@@ -107,7 +110,7 @@ int main(int argc, char* argv[])
 					throw Digit_error(digit_error_msg);
 				}
 			}
-		//increment summary figures
+		//increment total and count
 		total_payments+=string_to_double(this_payment);
 		count_payments++;
 		}
@@ -131,34 +134,25 @@ int main(int argc, char* argv[])
 	strftime(current_time_string, 30, "Date: %x %X", local_time);
 
 	//write output file
-	
-	
-	
-	
-	
-	//////////////////////////////////////////////////////
-	//testing couts - delete after program is finished
-	
-	cout<<opened_input_file<<endl;
-	cout<<opened_output_file<<endl;
-	
-	cout << current_time_string << endl;
-	cout << total_payments << endl;
-	cout << count_payments << endl;
-	
-	//testing couts - delete after program is finished
-	//////////////////////////////////////////////////////
-	
-	
-	
+	out<<current_time_string<<endl;
+	out<<"Total payment: $"<<total_payments<<endl;
+	out<<"Average payment: $"<<setprecision(2)<<fixed<<average_payments<<endl;
 	
 	//close streams
 	in.close();
 	out.close();	
 	
-	//open output file as input streambuf
-	
+	//open output file as input stream
+	ifstream saved_output;
+	openFile(saved_output, opened_output_file);
+		
 	//display output file
+	while(!saved_output.eof())
+	{
+		getline(saved_output,this_line);
+		cout<<this_line<<endl;
+	}
+	saved_output.close();
 	
 	
 	return 0;
